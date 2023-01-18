@@ -2,15 +2,15 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { sequelize } from "./sequelize.js";
-import { moviesRouter } from "./Routes/moviesRouter.js";
-
+import { studentsRouter } from "./Routes/studentsRouter.js";
+import { notesRouter } from "./Routes/notesRouter.js";
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use("/api", moviesRouter);
+app.use("/api",notesRouter);
 
 app.listen(5001, async () => {
   console.log("Express web server running on port 5001");
